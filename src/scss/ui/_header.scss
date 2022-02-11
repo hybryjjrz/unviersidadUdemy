@@ -1,0 +1,6 @@
+@use '../custom' as *;
+
+.header {
+    position: relative; //permite posicionar el header relativo a su ubicación original, haciendo que el z-index se aplique mejor y este se encuentre por encima de la primera sección, haciendo visible su sombreado
+    z-index: 100;
+}

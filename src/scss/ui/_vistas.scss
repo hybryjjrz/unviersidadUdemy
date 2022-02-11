@@ -1,0 +1,60 @@
+@use '../custom' as *;
+
+.listado-vistas {
+    @include make-row;
+
+    .vista {
+        
+        @include make-col-ready; //pantallas más pequeñas, toma todo el espacio
+
+        @include media-breakpoint-up(sm){ //pantallas que van de pequeño a mediano
+            @include make-col(1,2); //cada elemento toma una columna de dos
+        }
+
+        @include media-breakpoint-up(md){ //pantallas que van de mediano a grande
+            @include make-col(1,3); //toma una columna de tres
+        }
+
+        @include media-breakpoint-up(lg){ //pantallas que van de grande a extra grande
+            @include make-col(1,5); //toma una columna de 5
+        }
+
+        //EL TAMAÑO DE LA IMAGEN VISTA ES DEFINIDO POR LA COLUMNA
+        .titulo {
+            font-family: $fuente-textos;
+            font-size: 1rem;
+        }
+
+        .instructor,
+        .total {
+            font-size: .8rem;
+        }
+
+        .calificacion {
+            width: 6rem;
+        }
+
+        .precio {
+            font-size: .9rem;
+
+            span {
+                font-size: .7rem;
+                text-decoration: line-through;
+                
+                @media (min-width: 1200px) { //hacer que en pantallas grandes la letra del span sea de color rojo
+            
+                    color: red;
+                }
+
+            }
+
+        }
+
+
+    }
+
+}
+
+//En el html del último elemento se agregan media queries para hacer que ese elemento se muestre o no dependiendo del tamaño de pantalla, para hacer que el quinto elemento tenga un compañero de fila en los tamaños que sea necesario (cuando se tienen columnas de dos) y que el cuarto y quinto elemento tengan de igual forma un elemento que complemente la fila (cuando se tienen columnas de tres)
+//<li class="vista d-lg-none d-sm-block d-none">
+//con esto se logra que en las pantallas más pequeñas el elemento no se muestre, en pantallas pequeñas a grandes sí (se da hasta a grandes porque la media query indica un tamaño de pequeño o más grande y al no haber otra media query para el tamaño mediano el comportamiento se mantiene hasta que se indique lo contrario), después en la media query de pantallas grandes en adelante el elemento no será mostrado

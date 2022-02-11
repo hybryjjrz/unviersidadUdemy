@@ -1,0 +1,20 @@
+@use '../custom' as *;
+
+.descuentos {
+
+    .texto-descuentos {
+
+        @include media-breakpoint-up(lg) { //de modo que el margen negativo sólo esté presente cuando se está en una pantalla grande
+            margin-bottom: -2rem; //haciendo el elemento moverse hacia abajo, mismo resultado que con un transform translateY
+
+            //transform: translateY(2rem);
+
+        }
+
+    }
+
+    .buscar {
+        border-radius: 0; //removiendo el border radius por default agregado con la clase "form-control"
+    }
+
+}

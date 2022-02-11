@@ -1,0 +1,56 @@
+//Reescribir colores
+$negro: #000;
+$blanco: #fff;
+$morado: #A435F0;
+$gris: #F8F9FB;
+$gris-oscuro: #6A6F73;
+$naranja: #B4690E;
+
+//Tipografía
+$fuente-headings: 'Kaisei HarunoUmi', serif;
+$fuente-textos: Arial, Helvetica, sans-serif;
+$headings-font-family: $fuente-headings; //variable que viene del archivo _variables.scss, por lo que se está reescribiendo el valor de la misma
+$headings-font-weight: 700;
+// $font-size-root: 62.5%; hacer que 1rem sea igual a 10px;
+//$font-family-sans-serif: ; modificar la fuente de todos los textos
+//$font-size-base: ; modificar el tamaño de fuente de botones y párrafos
+$h2-font-size: 3rem;
+$h3-font-size: 2.6rem;
+
+
+//Colores
+$secondary: $naranja;
+$success: $morado;
+$light: $gris;
+$dark: $negro;
+
+//Formularios
+$input-border-radius: 1rem;
+$input-border-color: $dark;
+
+//Enlaces
+$nav-link-color: $gris-oscuro;
+$nav-link-hover-color: $dark;
+$nav-link-font-weight: 700;
+$nav-link-font-size: .9rem;
+
+//Botones
+$btn-border-radius: 0;
+$btn-font-weight: 700;
+
+
+//Espaciado
+//$spacer: 5rem; //haciendo más grandes los espaciados como paddings |||| p-1, p-2 ... etc, no para las definiciones normales como padding-top: 2rem;
+
+//Cards
+$card-spacer-x: 0; //eliminando espaciado, haciendo que los contenidos se hagan hacia la izquierda
+$card-border-radius: 0; //quitando bordes superiores redondeados
+$card-border-width: 0; //removiendo el border de las cartas
+
+//Habilitar CSS Grid
+$enable-cssgrid: true;
+
+
+// Importar Bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
